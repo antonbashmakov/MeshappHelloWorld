@@ -38,7 +38,7 @@ app.post('/action', async (req, res) => {
   const { user } = req;
 
   //console.log(user);
-  console.log(command);
+  console.log(req.body);
 
   if (!command) {
     res.send('You clicked some thing');
