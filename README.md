@@ -33,7 +33,7 @@ You can find detailed explanation in russian [here](https://project6351618.tilda
     ]
   };
   res.send(response);
-});
+  });
   ```
   This will render the landing page of your bot on the start. This is your landing page.
 
