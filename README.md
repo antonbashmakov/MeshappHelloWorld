@@ -13,7 +13,7 @@ You can find detailed explanation in russian [here](https://project6351618.tilda
   - Short description of the bot. This field will be used in the search.
 - You can go to [meshapp.cc](https://meshapp.cc/) and search your bot after your it has been registered. It should be searchable by name or description;
 - Go to your bot's code and make it return following JSON formated response:
-  `
+  ```
   app.get('/', async (req, res) => {
   const response = {
     name: 'start',
@@ -34,7 +34,7 @@ You can find detailed explanation in russian [here](https://project6351618.tilda
   };
   res.send(response);
 });
-  `
+  ```
   This will render the landing page of your bot on the start. This is your landing page.
 
 That is it. You have just created your first bot on [meshapp.cc](https://meshapp.cc/)
@@ -44,15 +44,15 @@ That is it. You have just created your first bot on [meshapp.cc](https://meshapp
 All the interaction components (like buttons, cards etc) will fire up a POST reuest to your bot when interacted.
 
 The call will be made to *{your-bot-url}/action*. Take a look at the example with our button from the snippet above. Our button component holds to following: 
-`
+```
   ...
   action: 'goto:components',
   ...
-`
+```
 
 The *goto:components* string will be sent along with the rquest when button clicked. Lets write the code which will handle it:
 
-`
+```
 app.post('/action', async (req, res) => {
   const { command } = req.body;
 
@@ -70,7 +70,7 @@ app.post('/action', async (req, res) => {
     res.send(views[view]);
   }
 });
-`
+```
 
 As you can see the *goto:components* string is stored as *command* field in the body of the request. By the design it says to us that we want user to navigate to *components* view after button click.  NOTE that the *goto* notion is not predefined by the system. You are free to choose what ever convention you like, just keep track of what you agreed on.
 
