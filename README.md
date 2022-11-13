@@ -1,3 +1,11 @@
+# What is Meshapp.cc?
+
+[meshapp.cc](https://meshapp.cc/) is a lowcode platform which allows developers create small applications (we call them **bots**) without spending lifetime on frontend development while having any backend stack they prefer.
+
+All you need is to send the result view to the client as JSON object and handle user's interaction with it on your server. 
+
+The project is mobile oriented.
+
 # Example of creating a bot in Meshapp.cc
 
 You can find detailed explanation in russian [here](https://project6351618.tilda.ws/).
@@ -74,7 +82,7 @@ app.post('/action', async (req, res) => {
 
 As you can see the *goto:components* string is stored as *command* field in the body of the request. By the design it says to us that we want user to navigate to *components* view after button click.  NOTE that the *goto* notion is not predefined by the system. You are free to choose what ever convention you like, just keep track of what you agreed on.
 
-This being said we want to return the *components* view to the client as a response. Find the view in the *views.js* file to see what it consists of. 
+This being said we want to return the *components* view to the client as a response. Find the view in the [views.js](https://github.com/antonbashmakov/MeshappHelloWorld/blob/main/views.js) file to see what it consists of. 
 
 ### `views.js`
 
