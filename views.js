@@ -5,18 +5,18 @@ exports.components = {
       type: 'Typography',
       as: 'h1',
       variant: 'centred',
-      children: 'Доступные компоненты',
+      children: 'List od components',
     },
     {
       type: 'Typography',
       as: 'h2',
       variant: 'centred',
-      children: 'Формы',
+      children: 'Forms',
     },
     {
       type: 'Form',
       submitButton: {
-        text: 'Отправить',
+        text: 'Submit',
         variant: 'wide'
       },
       action: 'submit:someaction',
@@ -24,15 +24,15 @@ exports.components = {
         {
           type: 'TextInput',
           name: 'nonobligatorytext',
-          title: 'Необязательное текстовое поле',
+          title: 'Nonobligatory text field',
         },
         {
           type: 'TextInput',
           name: 'nobligatorytext',
           required: true,
           pattern: '^coconut$',
-          error: 'Надо написать coconut',
-          title: 'Обязательное поле с Regex паттерном /^coconut$/',
+          error: 'You shall write coconut',
+          title: 'Obligatory text field with Regex pattern /^coconut$/',
         }
       ]
     },
@@ -40,7 +40,7 @@ exports.components = {
       type: 'Typography',
       as: 'h2',
       variant: 'centred',
-      children: 'Кнопки',
+      children: 'Buttons',
     },
     {
       type: 'Button',
@@ -62,10 +62,24 @@ exports.components = {
       variant: 'alert',
     },
     {
+      type: 'SocialButtons',
+      facebook: 'http://meshapp.cc',
+      twitter: 'http://meshapp.cc',
+      vk: {
+        url: 'http://meshapp.cc',
+        title: 'For those who loves programming but not the frontend',
+        image: 'https://firebasestorage.googleapis.com/v0/b/meshapp-prod.appspot.com/o/ic_launcher-web.png?alt=media&token=1890e164-c7c5-448d-9a0a-f74fc7969ba0'
+      },
+      telegram: {
+        url: 'http://meshapp.cc',
+        text: 'For those who loves programming but not the frontend',
+      }
+    },
+    {
       type: 'Typography',
       as: 'h2',
       variant: 'centred',
-      children: 'Поисковая строка',
+      children: 'Search field',
     },
     {
       type: 'SearchInput',
@@ -75,43 +89,43 @@ exports.components = {
       type: 'Typography',
       as: 'h2',
       variant: 'centred',
-      children: 'Тексты и заголовки',
+      children: 'Texts and Headers',
     },
     {
       type: 'Typography',
       as: 'h1',
       variant: 'centred',
-      children: 'Заголовок H1',
+      children: 'Header H1',
     },
     {
       type: 'Typography',
       as: 'h2',
       variant: 'centred',
-      children: 'Заголовок H2',
+      children: 'Header H2',
     },
     {
       type: 'Typography',
       as: 'h3',
-      children: 'Заголовок H3',
+      children: 'Header H3',
     },
     {
       type: 'Typography',
-      children: 'Обычный скучный текст без выделений и других элементов. В общем, съешь ещё этих мягких французских булок, да выпей чаю',
+      children: 'Simple boring plane text. The quick brown fox jumps over the lazy dog',
     },
     {
       type: 'Typography',
       as: 'html',
-      children: 'Обычный скучный HTML. В общем, <b>съешь</b> ещё этих мягких французских булок, да выпей <a href="www.google.com">чаю</a>',
+      children: 'Simple boring html. The quick brown fox jumps over the <a href="www.google.com">lazy</a> dog',
     },
     {
       type: 'Typography',
       as: 'small',
-      children: 'Маленький текст. В общем, съешь ещё этих мягких французских булок, да выпей чаю',
+      children: 'Text in small. The quick brown fox jumps over the lazy dog',
     },
     {
       type: 'Typography',
       as: 'h2',
-      children: 'Хеадер с контактами',
+      children: 'Header with contacts',
     },
     {
       type: 'HeaderWithContactsAndLogo',
@@ -121,7 +135,7 @@ exports.components = {
     {
       type: 'Typography',
       as: 'h2',
-      children: 'Картинки',
+      children: 'Images',
     },
     {
       type: 'Image',
@@ -130,21 +144,21 @@ exports.components = {
     {
       type: 'Typography',
       as: 'h2',
-      children: 'Карточка с заголовком',
-    },    
+      children: 'Card with header',
+    },
     {
       type: 'CardWithImageAndTitle',
       variant: 'full',
       backgroundImage: false,
       image: 'https://firebasestorage.googleapis.com/v0/b/meshapp-prod.appspot.com/o/ip_scr_01_sc.png?alt=media&token=3f85652f-633d-4c25-9e66-0012ec7267eb',
       title: 'Be Happy',
-      subTitle: 'съешь ещё этих мягких французских булок, да выпей чаю',
+      subTitle: 'The quick brown fox jumps over the lazy dog',
       action: 'goto:behappy'
     },
     {
       type: 'Typography',
       as: 'h2',
-      children: 'Грид компонент в 2 столбца',
+      children: 'Grid component',
     },
     {
       type: 'Container',

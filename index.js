@@ -26,7 +26,7 @@ app.get('/', async (req, res) => {
         type: 'Button',
         variant: 'primary',
         action: 'goto:components',
-        text: `Список компонентов`,
+        text: `Supported components`,
       },
     ]
   };
