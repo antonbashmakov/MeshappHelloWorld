@@ -2,6 +2,7 @@ const express = require('express');
 const cors = require('cors');
 const bodyParser = require('body-parser');
 const views = require('./views');
+const components = require('./components');
 
 const app = express();
 
@@ -13,31 +14,12 @@ app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: true }));
 
 app.get('/', async (req, res) => {
-  const response = {
-    name: 'start',
-    components: [
-      {
-        type: 'Typography',
-        as: 'h1',
-        variant: 'centred',
-        children: 'Hello World!',
-      },
-      {
-        type: 'Button',
-        variant: 'primary',
-        action: 'goto:components',
-        text: `Supported components`,
-      },
-    ]
-  };
-  res.send(response);
+  res.send(views.componentsList);
 });
 
 app.post('/action', async (req, res) => {
   const { command } = req.body;
   const { user } = req;
-
-  //console.log(user);
   console.log(req.body);
 
   if (!command) {
@@ -48,8 +30,10 @@ app.post('/action', async (req, res) => {
 
   if (command.startsWith('goto')) {
     const view = command.split(':')[1];
-    console.log('Navigating to view:', view);
-    res.send(views[view]);
+    console.log('Navigating to view:', components);
+    const toShow = views[view] ? views[view] : components[view];
+    
+    res.send(toShow);
   }
 });
 
